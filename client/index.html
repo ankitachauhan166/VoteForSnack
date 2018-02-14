@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" ng-app="VoteforSnack" ng-controller="UsersController">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>VoteForSnack</title>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body class="text-center">
+     <script src="/bower_components/jquery/dist/jquery.js"></script>
+     <script src="/bower_components/angular/angular.js"></script>     
+     <script src="/bower_components/angular-route/angular-route.js"></script>
+     <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+     <script src="/app.js"></script>
+     <script src="/controller/Users.js"></script>
+     <script src="/controller/Snacks.js"></script>
+    
+
+     <body class="text-center">
+
+            <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+              <header class="masthead mb-auto">
+                <div class="inner">
+                 
+                  <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link active" href="#/snacks">Vote Status</a>
+                    <a class="nav-link" href="#/users">Existing User</a>
+                    <a class="nav-link" href="#/users/edit/{{user._id}}">Change Vote</a>
+                  </nav>
+                </div>
+              </header>
+        
+              <main role="main" class="inner cover" >
+                <div ng-view>
+              </div>
+              </main>
+        
+              <footer class="mastfoot mt-auto">
+                <div class="inner">
+                  <p>By Ankita Chauhan</p>
+                </div>
+              </footer>
+            </div>
+        
+        
+    </body>
+</html>

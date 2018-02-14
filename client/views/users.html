@@ -1,0 +1,16 @@
+<div class="panel panel-default" ng-init='getUsers()'>
+        <div class="panel-heading">
+            <h4 class="panel-title">Users who already Voted</h4>
+        </div>
+        <div class="panel-body">
+                
+                    <div ng-repeat="user in users.data">
+                        <div>
+                             <ul><li>
+                                <h4>{{user.name}}</h4>
+                                <a href="#/users/details/{{user._id}}" class="btn btn-lg btn-secondary">View</a></li>
+                            </ul>  
+                        </div>   
+                    </div>    
+        </div>
+</div>

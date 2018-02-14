@@ -1,0 +1,19 @@
+{
+  "name": "voteforsnack",
+  "version": "1.0.0",
+  "description": "Simple file",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "mongoose": "*",
+    "mongodb": "*",
+    "path": "*"
+  },
+  "author": "Ankita",
+  "license": "ISC",
+  "devDependencies": {}
+}

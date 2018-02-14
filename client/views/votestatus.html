@@ -1,0 +1,17 @@
+<div class="panel panel-default" ng-init='getSnacks()'>
+        <div class="panel-heading">
+            <h4 class="panel-title">Trending</h4>
+        </div>
+        <div class="panel-body">
+                
+                    <div ng-repeat="snack in snacks.data">
+                        <div>
+                             <ul><li>
+                                <h4>{{snack.name}}</h4>
+                                <h4>{{snack.VoteRecevied}}</h4>
+                                </li>
+                            </ul>  
+                        </div>   
+                    </div>    
+        </div>
+</div>
