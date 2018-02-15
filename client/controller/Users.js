@@ -34,5 +34,53 @@ VoteforSnack.controller('UsersController',['$scope','$http','$location','$routeP
 		$http.delete('/api/Users/'+id).then(function(response){
 			window.location.href='#/users';
 		});
-	}
+    }
+    $scope.getVote = function(){    
+        $http.get('/api/users').then(function(response){           
+         //   for(i=0, i<response.length,i++ )
+           // $scope.users = response;
+            //var obj=JSON.parse(response)
+            var item=new Array();
+            var votes=new Array();
+            for(var i=0; i<response.data.length; i++){
+                if(i>0){
+                    pos=item.indexOf(response.data[i].VotedFor);
+                    console.log("position"+pos)
+                    if(pos>-1){
+                        votes[pos]=votes[pos]+1;
+                    }
+                    else{
+                        console.log("INSIDE")
+                        console.log(response.data[i].VotedFor);
+                         console.log(response.data[i].VotedFor);
+                        item[item.length]=response.data[i].VotedFor;
+                        votes[votes.length]=1;
+                    }
+                }
+                else{
+                    console.log(response.data[i].VotedFor);
+                    console.log(response.data[i].VotedFor);
+                    item[0]=response.data[i].VotedFor;
+                    votes[0]=1;
+                }
+                console.log("------------------")
+                console.log(response.data[i].VotedFor);
+                console.log("------------------")
+            }
+            console.log(item);
+            console.log(votes);
+            var strRes="['data':{";
+            for(var j=0;j<item.length;j++){
+                strRes+="{'name':"+item[j]+","+" 'votes':"+votes[j]+"}";
+            }
+            strRes+="}]";
+            console.log(strRes);
+          
+            $scope.users = (item);
+            $scope.status = (votes);
+           
+
+            console.log(item)
+        });
+    }
 }]);

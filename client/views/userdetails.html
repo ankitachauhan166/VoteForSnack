@@ -1,27 +1,28 @@
-<a href="#/books">Back</a>
-<div class="panel panel-default" ng-init="getUser()">
-        <div class="panel-heading">
-            <h4 class="panel-title">User Details</h4>
+
+<div ng-init="getUser()">
+        <div >
+            <h4 class="cover-heading">User Details</h4>
         </div>
-        <div class="panel-body">
-          <div class="row">
-              <div>
-                  <div class ="col-md-12">
-                      <div class="col-md-4">
-                        <h4>Name:{{user.name}}</h4>                       
+        <br>
+        <div class="lead">
+         
+             
+                  <div class ="row">
+                      <div class="col-md-12">
+                        <h6>Name:{{user.name}}</h6>                       
                       </div>
-                      <div class="col-md-4">
-                        <h4>Email: {{user.email}}</h4>                       
+                      <div class="col-md-12">
+                        <h6>Email: {{user.email}}</h6>                       
                       </div>
-                      <div class="col-md-4">
-                        <h4>Vote:{{user.VotedFor}}</h4>                       
+                      <div class="col-md-12">
+                        <h6>Vote:{{user.VotedFor}}</h6>                       
                       </div>
                       
-                  </div>
+                    </div> 
+             <br><br>
+              <div >
+                  <a href="#/users/edit/{{user._id}}">Edit</a> |  <a href="#" ng-click="removeUser(user._id)">Delete</a>  |  <a href="#/users">Back</a>
               </div>
-              <div class="pull-right">
-                  <a href="#/users/edit/{{user._id}}">Edit</a> |  <a href="#" ng-click="removeUser(user._id)">Delete</a>
-              </div>
-          </div>    
+            
         </div>
 </div>

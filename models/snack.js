@@ -7,9 +7,7 @@ var snackSchema = mongoose.Schema({
         required: true,
         unique: true
     },
-    VoteRecevied:{
-        type: Number 
-    },
+  
     create_date:{
         type: Date,
         default: Date.now

@@ -1,17 +1,26 @@
-<div class="panel panel-default" ng-init='getSnacks()'>
-        <div class="panel-heading">
-            <h4 class="panel-title">Trending</h4>
+<div  ng-init='getVote()'>
+        <div >
+            <h4 >Vote Received</h4>
         </div>
-        <div class="panel-body">
-                
-                    <div ng-repeat="snack in snacks.data">
-                        <div>
-                             <ul><li>
-                                <h4>{{snack.name}}</h4>
-                                <h4>{{snack.VoteRecevied}}</h4>
-                                </li>
-                            </ul>  
-                        </div>   
-                    </div>    
-        </div>
+        <br>
+       
+            <table>
+                    <tr>
+                            <th><div>Snack</div></th>
+                            <th><div>Vote</div></th>
+                           
+                          </tr>
+                <tr>
+                <td>
+                       
+                    <div  ng-repeat="user in users">                     
+                                 {{user}}                       
+                    </div> </td>  
+                   <td>  
+                    <div  ng-repeat="vote in status track by $index">                     
+                                {{vote}}                          
+                    </div> 
+                </td></tr>     
+        </table>
+    
 </div>
