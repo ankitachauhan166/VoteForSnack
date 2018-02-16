@@ -2,39 +2,25 @@ var express = require('express');
 var app = express();
 var bodyParser = require ('body-parser');
 var mongoose = require ('mongoose/');
-var MongoClient = require('mongodb').MongoClient,format = require('util').format;
-//var url = "mongodb://localhost:27017/voteapp";
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/voteapp";
 
-//connect to mongoclient
-//var mongoClient = new MongoClient(new Server('localhost', 27017));
-MongoClient.connect('mongodb://127.0.0.1:27017/voteapp',function(err, db) {
-  if (err) {
-        throw err;
-    } else {
-        console.log("successfully connected to the database");
-    }
-    db.close();
-});
- 
- // var db1 = mongoClient.db("voteapp");
-
-//  mongoClient.close();
-//});
-
-//MongoClient.connect(url,function(err,db){
-   // if(err){throw err;}
-//console.log('voteapp is created')
- // db.close();
-//})
 app.use(express.static(__dirname +'/client'));
 //initialize body parser
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+
+//connect to mongoclient
+MongoClient.connect(url,function(err,db){
+    if(err){throw err;}
+    console.log('voteapp is created')
+    db.close();
+})
 //object created
 Snack = require('./models/snack');
 User = require('./models/user');
 
 //connect to mongoose
-mongoose.connect('mongodb://127.0.0.1:27017/voteapp')
+mongoose.connect('mongodb://localhost/voteapp')
 var db = mongoose.connection;
 //function to main page
 app.get('/',function(req,res){
