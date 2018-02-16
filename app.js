@@ -34,7 +34,7 @@ Snack = require('./models/snack');
 User = require('./models/user');
 
 //connect to mongoose
-mongoose.connect('mongodb://localhost/voteapp')
+mongoose.connect('mongodb://127.0.0.1:27017/voteapp')
 var db = mongoose.connection;
 //function to main page
 app.get('/',function(req,res){
