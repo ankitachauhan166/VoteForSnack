@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 
 //connect to mongoclient
 var mongoClient = new MongoClient(new Server('localhost', 27017));
-mongoClient.open(function(err, mongoClient) {
+mongoClient.connect(function(err, mongoClient) {
   var db1 = mongoClient.db("voteapp");
 
   mongoClient.close();
