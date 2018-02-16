@@ -3,18 +3,25 @@ var app = express();
 var bodyParser = require ('body-parser');
 var mongoose = require ('mongoose/');
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/voteapp";
-
+//var url = "mongodb://localhost:27017/voteapp";
+Server = require('mongodb').Server;
 app.use(express.static(__dirname +'/client'));
 //initialize body parser
 app.use(bodyParser.json());
 
 //connect to mongoclient
-MongoClient.connect(url,function(err,db){
-    if(err){throw err;}
-    console.log('voteapp is created')
-    db.close();
-})
+var mongoClient = new MongoClient(new Server('localhost', 27017));
+mongoClient.open(function(err, mongoClient) {
+  var db1 = mongoClient.db("voteapp");
+
+  mongoClient.close();
+});
+
+//MongoClient.connect(url,function(err,db){
+ //   if(err){throw err;}
+  //  console.log('voteapp is created')
+ //  db.close();
+//})
 //object created
 Snack = require('./models/snack');
 User = require('./models/user');
