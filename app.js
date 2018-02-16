@@ -7,7 +7,7 @@ var MongoClient = require('mongodb').MongoClient,format = require('util').format
 
 //connect to mongoclient
 //var mongoClient = new MongoClient(new Server('localhost', 27017));
-MongoClient.connect('mongodb://localhost:27017/voteapp',function(err, db) {
+MongoClient.connect('mongodb://127.0.0.1:27017/voteapp',function(err, db) {
   if (err) {
         throw err;
     } else {
